@@ -59,7 +59,7 @@ def read_report(root, name, digest):
             raise ReportError('unsafe_input')
     data = load(path)
     # Hash check is a consistency check, not a signature or provenance proof.
-    flags = os.O_RDONLY | getattr(os, 'O_NOFOLLOW', 0) | getattr(os, 'O_BINARY', 0)
+    flags = os.O_RDONLY | getattr(os, 'O_NONBLOCK', 0) | getattr(os, 'O_NOFOLLOW', 0) | getattr(os, 'O_BINARY', 0)
     try:
         with os.fdopen(os.open(path, flags), 'rb') as stream:
             require(stat.S_ISREG(os.fstat(stream.fileno()).st_mode))

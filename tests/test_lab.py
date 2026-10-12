@@ -1,6 +1,7 @@
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -53,6 +54,16 @@ class LabTests(unittest.TestCase):
  def test_invalid_report(self):
   with tempfile.TemporaryDirectory() as tmp:
    p=Path(tmp)/'bad.json';p.write_text('{"x":NaN}',encoding='utf-8');self.data['cases'][0].update(report=p.name,sha256=hashlib.sha256(p.read_bytes()).hexdigest());self.assertEqual(outcome(evaluate(self.data,Path(tmp),DATE)['assessment']),2)
+ def test_symlink_evidence_rejected(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   p=Path(tmp)/'link.json';p.symlink_to(ROOT/'examples/safe.synthetic.json');self.data['cases'][0]['report']=p.name;self.assertEqual(outcome(evaluate(self.data,Path(tmp),DATE)['assessment']),2)
+ @unittest.skipUnless(hasattr(os,'mkfifo'),'FIFO unavailable on this platform')
+ def test_fifo_evidence_rejected(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   p=Path(tmp)/'pipe.json';os.mkfifo(p);self.data['cases'][0]['report']=p.name;self.assertEqual(outcome(evaluate(self.data,Path(tmp),DATE)['assessment']),2)
+ def test_case_budget(self):
+  self.data['cases']*=257
+  with self.assertRaises(ReportError):manifest(self.data)
  def test_cli_no_overwrite(self):
   with tempfile.TemporaryDirectory() as tmp:
    p=Path(tmp)/'output.json';args=[sys.executable,'-m','opsec_lab','verify',str(ROOT/'examples/suite.synthetic.json'),'--observed-at',DATE,'--output',str(p)]
