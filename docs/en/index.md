@@ -1,6 +1,6 @@
 # OPSEC Validation Lab
 
-0.1.0a1 local candidate; hosted CI and release pending.
+Alpha 0.1.0a1; three-platform CI and clean installation passed.
 
 - [requirements](requirements.md)
 - [architecture](architecture.md)

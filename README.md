@@ -12,4 +12,4 @@ opsec-lab verify examples/live-unexecuted.json --observed-at 2026-10-12T00:00:00
 
 [Documentation](docs/en/index.md)
 
-0.1.0a1 local candidate. Nineteen local test methods passed (FIFO check is platform-specific); hosted CI and release pending. No live environment tested.
+Alpha 0.1.0a1. Nineteen test methods passed on Linux/macOS; Windows passed eighteen with the FIFO-specific test skipped. Eleven bilingual documentation pairs and clean wheel installation passed on all three operating systems with Python 3.13. No live environment tested.
