@@ -11,3 +11,5 @@
 - [limitations](limitations.md)
 - [user-guide](user-guide.md)
 
+- [Development plan](development-plan.md)
+- [Alpha 0.1.0a1](release-notes.md)
