@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools==84.0.0", "wheel==0.48.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "opsec-validation-lab"
+version = "0.1.0a1"
+description = "Offline reproducible OPSEC report scenario verification"
+requires-python = ">=3.12"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["opsec-report-contract==0.1.0a1"]
+[project.scripts]
+opsec-lab = "opsec_lab.cli:main"
+[tool.setuptools]
+packages = ["opsec_lab"]

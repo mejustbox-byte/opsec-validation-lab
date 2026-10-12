@@ -1,0 +1,30 @@
+{
+  "schema_version": "lab-1.0",
+  "suite_id": "synthetic-suite",
+  "cases": [
+    {
+      "id": "live-unexecuted",
+      "kind": "live",
+      "report": "",
+      "sha256": "",
+      "producer": {
+        "name": "synthetic-producer",
+        "version": "1",
+        "ruleset": "baseline"
+      },
+      "expected": [
+        {
+          "check_id": "CHECK-001",
+          "asset_id": "synthetic-asset",
+          "status": "pass"
+        }
+      ],
+      "provenance": {
+        "platform": "Windows",
+        "platform_version": "",
+        "execution_id": "",
+        "sanitization_reviewed": false
+      }
+    }
+  ]
+}

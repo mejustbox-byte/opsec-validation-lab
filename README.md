@@ -1,2 +1,15 @@
-# opsec-validation-lab
-Offline OPSEC scenario verification with strict manifests, coverage-aware reports and explicit synthetic/live evidence classes.
+# OPSEC Validation Lab
+
+Install Python 3.12+ and bootstrap the exact released contract wheel. Initial installation needs network; verification runs locally. Output filenames must not exist. The first verification returns 0; the unexecuted live example writes output and returns 2. Code 1 means an assertion mismatch; 3 means malformed input or unavailable output. These are lab assertion codes, not infrastructure assurance.
+
+```bash
+python -m pip install -r requirements-bootstrap.txt
+python -m pip install .
+opsec-lab check-manifest examples/suite.synthetic.json
+opsec-lab verify examples/suite.synthetic.json --observed-at 2026-10-12T00:00:00Z --output result.json
+opsec-lab verify examples/live-unexecuted.json --observed-at 2026-10-12T00:00:00Z --output live-result.json
+```
+
+[Documentation](docs/en/index.md)
+
+0.1.0a1 local candidate. Sixteen local tests passed; hosted CI and release pending. No live environment tested.

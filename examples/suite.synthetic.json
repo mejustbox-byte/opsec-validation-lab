@@ -1,0 +1,30 @@
+{
+  "schema_version": "lab-1.0",
+  "suite_id": "synthetic-suite",
+  "cases": [
+    {
+      "id": "synthetic-safe",
+      "kind": "synthetic",
+      "report": "safe.synthetic.json",
+      "sha256": "6271647eec1b867f524f96ca0b3449f8523c6420fe6b5c88b0a013a3c394e107",
+      "producer": {
+        "name": "synthetic-producer",
+        "version": "1",
+        "ruleset": "baseline"
+      },
+      "expected": [
+        {
+          "check_id": "CHECK-001",
+          "asset_id": "synthetic-asset",
+          "status": "pass"
+        }
+      ],
+      "provenance": {
+        "platform": "synthetic",
+        "platform_version": "1",
+        "execution_id": "fixture-1",
+        "sanitization_reviewed": true
+      }
+    }
+  ]
+}
