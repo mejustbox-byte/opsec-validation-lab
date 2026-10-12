@@ -1,0 +1,1 @@
+https://github.com/mejustbox-byte/opsec-report-contract/releases/download/v0.1.0a1/opsec_report_contract-0.1.0a1-py3-none-any.whl#sha256=0075f62d9a99172d24c56882192cc53d547546b60eb9d863bfb1041213c0bd94

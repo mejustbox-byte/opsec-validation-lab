@@ -1,0 +1,25 @@
+{
+  "product_version": "0.1.0a1",
+  "local_tests": 19,
+  "documentation_pairs": 11,
+  "local_environment": "Linux/Python 3.12",
+  "clean_wheel_install": "passed",
+  "live_environments": "not_tested",
+  "hosted_ci": {
+    "status": "passed",
+    "run_id": 38225486183,
+    "commit": "a577778eb851ee59c03669bde0244d6494b92b3c",
+    "python": "3.13",
+    "Linux": {
+      "passed": 19
+    },
+    "macOS": {
+      "passed": 19
+    },
+    "Windows": {
+      "passed": 18,
+      "skipped": 1,
+      "reason": "FIFO unavailable"
+    }
+  }
+}
